@@ -62,21 +62,21 @@ const Auth = () => {
               {variant === "login" ? null : (
                 <Input
                   label='User Name'
-                  onChange={(event: any) => setName(event?.target.value)}
+                  onChange={(event) => setName(event?.target.value)}
                   id='name'
                   value={name}
                 />
               )}
               <Input
                 label='Email'
-                onChange={(event: any) => setEmail(event?.target.value)}
+                onChange={(event) => setEmail(event?.target.value)}
                 id='email'
                 type='email'
                 value={email}
               />
               <Input
                 label='Password'
-                onChange={(event: any) => setPassword(event?.target.value)}
+                onChange={(event) => setPassword(event?.target.value)}
                 id='password'
                 type='password'
                 value={password}
