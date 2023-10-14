@@ -1,6 +1,6 @@
 // import Billboard from "@/components/Billboard";
 // import MovieList from "@/components/MovieList";
-// import NavBar from "@/components/NavBar";
+import NavBar from "@/components/NavBar";
 // import useFavorites from "@/hooks/useFavorites";
 // import useMovieList from "@/hooks/useMovieList";
 import { NextPageContext } from "next";
@@ -28,16 +28,12 @@ export default function Home() {
 
   return (
     <>
-      {/* <NavBar />
-      <Billboard />
+      <NavBar />
+      {/* <Billboard />
       <div className='pb-40'>
         <MovieList title='Trending Now' data={movies} />
         <MovieList title='My List' data={favorites} />
       </div> */}
-      <h1 className='text-4xl text-green-800'>Hello</h1>
-      <button className='h-10 w-full bg-white' onClick={() => signOut()}>
-        Signout
-      </button>
     </>
   );
 }
