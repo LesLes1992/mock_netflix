@@ -6,8 +6,10 @@ import { useCallback, useState } from "react";
 
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/Fa";
+import { useRouter } from "next/router";
 
 const Auth = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -28,10 +30,12 @@ const Auth = () => {
         redirect: false,
         callbackUrl: "/profiles",
       });
+
+      router.push("/profiles");
     } catch (error) {
       console.log(error);
     }
-  }, [email, password]);
+  }, [email, password, router]);
 
   const register = useCallback(async () => {
     try {
