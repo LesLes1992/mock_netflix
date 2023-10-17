@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import { type } from "os";
 import { BsFillPlayFill } from "react-icons/bs";
 
 type playButtonProps = {

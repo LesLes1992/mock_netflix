@@ -16,17 +16,12 @@ const Watch = () => {
           className='text-white cursor-pointer'
           size={30}
         />
-        <p className='text-white text-xlmd:text-3xl font-bold'>
+        <p className='text-white text-xl md:text-3xl font-bold'>
           <span className='font-light'>Watching:</span>
           {data?.title}
         </p>
       </nav>
-      <video
-        src={data?.videoUrl}
-        className='h-full w-full'
-        autoPlay
-        controls
-      ></video>
+      <video src={data?.videoUrl} className='h-full w-full' autoPlay controls />
     </div>
   );
 };

@@ -1,8 +1,8 @@
-import useInfoModal from "@/hooks/useInfoModal";
+import useInfoModalStore from "@/hooks/useInfoModalStore";
 import useMovie from "@/hooks/useMovie";
 import { useCallback, useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import PlayButton from "./playButton";
+import PlayButton from "./PlayButton";
 
 type InfoModalProps = {
   visible?: boolean;
@@ -12,7 +12,7 @@ type InfoModalProps = {
 const InfoModal = ({ visible, onClose }: InfoModalProps) => {
   const [isVisible, setIsVisible] = useState(!!visible);
 
-  const { movieId } = useInfoModal();
+  const { movieId } = useInfoModalStore();
   const { data = {} } = useMovie(movieId);
 
   useEffect(() => {
@@ -24,13 +24,35 @@ const InfoModal = ({ visible, onClose }: InfoModalProps) => {
     setTimeout(() => {
       onClose();
     }, 300);
-  }, []);
+  }, [onClose]);
 
   if (!visible) return null;
 
   return (
-    <div className='z-50 transition duration-300 bg-black bg-opacity-80 flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0'>
-      <div className='relative w-auto mx-auto max-w-3xl rounded-md overflow-hidden'>
+    <div
+      className='
+    z-50 
+    transition 
+    duration-300 
+    bg-black 
+    bg-opacity-80 
+    flex 
+    justify-center 
+    items-center 
+    overflow-x-hidden 
+    overflow-y-auto 
+    fixed 
+    inset-0'
+    >
+      <div
+        className='
+        relative 
+        w-auto 
+        mx-auto 
+        max-w-3xl 
+        rounded-md 
+        overflow-hidden'
+      >
         <div
           className={`${
             isVisible ? "scale-100" : "scale-0"
@@ -44,10 +66,16 @@ const InfoModal = ({ visible, onClose }: InfoModalProps) => {
               loop
               src={data?.videoUrl}
               poster={data?.thumbnailUrl}
-            ></video>
+            />
             <div
               onClick={handleClose}
-              className='cursor-pointer absolute top-3 right-3 h-10 w-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center hover:bg-white hover:opacity-70 hover:text-black text-white'
+              className='
+              cursor-pointer 
+              absolute 
+              top-3 
+              right-3 
+              h-10 
+              w-10 rounded-full bg-black bg-opacity-70 flex items-center justify-center hover:bg-white hover:opacity-70 hover:text-black text-white'
             >
               <AiOutlineClose size={20} />
             </div>
