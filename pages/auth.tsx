@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 import { useCallback, useState } from "react";
 
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/Fa";
+import { FaGithub } from "react-icons/fa";
 import { useRouter } from "next/router";
 
 const Auth = () => {
