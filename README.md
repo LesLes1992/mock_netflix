@@ -16,5 +16,5 @@
 <h3 align='center'>Home Page 🏡</h3>
 
 <div align='center'>
-<img src='/images/mock_netflix.png'>
+<img src='/public/images/mock_netflix.png' alt="home_page" width="400">
 </div>
